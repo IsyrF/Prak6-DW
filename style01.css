@@ -1,0 +1,134 @@
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin-top: 50px;
+  background-color: #f0f8ff;
+  color: #333;
+}
+
+/* Styling for the weather information section */
+.weather-info {
+  margin-bottom: 20px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+/* Styling for the forecast cards */
+.forecast {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.day {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 150px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: popIn 0.8s ease-in-out;
+}
+
+/* Styling the date and weather condition */
+.day h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  animation: fadeInText 1.2s ease-in-out;
+}
+
+.day p {
+  font-size: 14px;
+  margin: 8px 0;
+}
+
+/* Styling for weather icons */
+.day img {
+  width: 50px;
+  height: 50px;
+  transition: transform 0.3s;
+  animation: spin 2s infinite linear;
+}
+
+/* Hover effect on forecast cards */
+.day:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.day:hover img {
+  transform: rotate(20deg);
+}
+
+/* Error message styling */
+.error {
+  color: red;
+  font-weight: bold;
+}
+
+/* Keyframe animations */
+
+/* Animation for fading in the content */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation for fading in text */
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Animation for a "pop-in" effect for forecast cards */
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Simple spin animation for weather icons */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Loader animation */
+.loader {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top-color: #3498db;
+  animation: spinLoader 1s ease infinite;
+  margin-top: 20px;
+}
+
+/* Loader spin animation */
+@keyframes spinLoader {
+  to {
+    transform: rotate(360deg);
+  }
+}
